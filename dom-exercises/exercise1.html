@@ -17,6 +17,15 @@
     </style>
 </head>
 <body>
-<div id="mydiv">Hello world</div>
+<div onmouseover="changetext1(this)" onmouseout="changetext2(this)" id="mydiv">Hello world</div>
+<script>
+   function changetext1(obj) {
+  obj.innerHTML = "Can I help you"
+}
+function changetext2(obj) {
+  obj.innerHTML = "Hello world"
+}
+
+</script>
 </body>
 </html>

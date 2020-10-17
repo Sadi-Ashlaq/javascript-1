@@ -17,25 +17,53 @@
 </head>
 <body>
 <form name="form">
-    <select name="font_family" id="font_family">
+    <select name="font_family" id="font_family" onchange = "changeFontStyle (this)">
         <option value="Arial" selected>Arial</option>
         <option value="Verdana">Verdana</option>
         <option value="Helvetica">Helvetica</option>
         <option value="Times New Roman">Times New Roman</option>
         <option value="Courier New">Courier New</option>
     </select>
-    <select name="font_size" id="font_size">
+    <select name="font_size" id="font_size" onchange = "onsize(this)">
         <option value="8pt">8pt</option>
         <option value="10pt">10pt</option>
         <option value="12pt" selected>12pt</option>
         <option value="14pt">14pt</option>
         <option value="16pt">16pt</option>
     </select>
-    <label>Italic <input type="checkbox" name="font_italic" id="font_italic"></label>
-    <label>Bold <input type="checkbox" name="font_bold" id="font_bold"></label>
-    <label>Underline <input type="checkbox" name="font_underline" id="font_underline"></label>
+    <label>Italic <input type="checkbox" name="font_italic" id="font_italic" onchange="changeFontItalic();"></label>
+    <label>Bold <input type="checkbox" name="font_bold" id="font_bold" onchange="changeFontBold();"></label>
+    <label>Underline <input type="checkbox" name="font_underline" id="font_underline" onchange="changeFontUnderline();"></label>
 </form>
-
 <div id="text">The quick brown fox jumps over the lazy dog</div>
+<script>
+
+        var changeFontStyle = function (font) { 
+        document.getElementById("text").style.fontFamily = font.value; 
+        } 
+
+        var onsize = function (font) { 
+        document.getElementById("text").style.fontSize = font.value; 
+        } 
+
+        function changeFontItalic() {
+            var text = document.getElementById("text");
+            var i = document.getElementById("font_italic").checked;
+            text.style.fontStyle = (i ? "italic" : "normal");
+        }
+
+        function changeFontBold() {
+            var text = document.getElementById("text");
+            var b = document.getElementById("font_bold").checked;
+            text.style.fontWeight = (b ? "bod" : "normal");
+        }
+
+        function changeFontUnderline() {
+            var text = document.getElementById("text");
+            var u = document.getElementById("font_underline").checked;
+            text.style.textDecoration = (u ? "underline" : "none");
+        }
+
+</script> 
 </body>
 </html>

@@ -52,7 +52,7 @@
             electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of
             Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like
             Aldus PageMaker including versions of Lorem Ipsum.</p>
-        <p><a href="#">Hide</a></p>
+        <p><a href="#" onclick="myFunction()" id="hide">Hide</a></p>
     </div>
 </article>
 
@@ -88,6 +88,10 @@
         <p><a href="#">Hide</a></p>
     </div>
 </article>
-
+<script>
+   function myFunction() {
+  document.getElementById("hide").style.visibility = "hidden";
+}
+</script>
 </body>
 </html>
